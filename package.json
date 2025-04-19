@@ -2,6 +2,7 @@
   "name": "chat_app",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon --watch server/src --exec ts-node --ext ts,json server/src/index.ts",
     "build": "tsc && npm install &&  prisma generate --schema=./server/prisma/schema.prisma && npm install --prefix client && npm run build --prefix client",
