@@ -1,6 +1,6 @@
 import { Response, Request } from "express"
-import prisma from "../db/prisma"
-import { getReceiverSocketId, io } from "../socket/socket"
+import prisma from "../db/prisma.js"
+import { getReceiverSocketId, io } from "../socket/socket.js"
 
 export const sendMessage = async (req: Request, res: Response) => {
   try {
@@ -107,7 +107,7 @@ export const getUserMessage = async (req: Request, res: Response) => {
       },
     })
     const usersWithLastMessage = await Promise.all(
-      users.map(async (user) => {
+      users.map(async (user: any) => {
         const conversation = await prisma.conversation.findFirst({
           where: {
             participantsIds: {

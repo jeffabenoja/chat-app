@@ -4,8 +4,8 @@ import {
   login,
   logout,
   getMySelf,
-} from "../controllers/auth.controller"
-import verifyToken from "../middleware/verifyToken"
+} from "../controllers/auth.controller.js"
+import verifyToken from "../middleware/verifyToken.js"
 
 const router = express.Router()
 
